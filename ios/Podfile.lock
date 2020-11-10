@@ -1,0 +1,33 @@
+PODS:
+  - Capacitor (2.4.2):
+    - CapacitorCordova
+  - CapacitorCordova (2.4.2)
+  - KAPinField (5.0.1)
+  - SnapKit (5.0.1)
+
+DEPENDENCIES:
+  - "Capacitor (from `../node_modules/@capacitor/ios`)"
+  - "CapacitorCordova (from `../node_modules/@capacitor/ios`)"
+  - KAPinField
+  - SnapKit (~> 5.0.0)
+
+SPEC REPOS:
+  trunk:
+    - KAPinField
+    - SnapKit
+
+EXTERNAL SOURCES:
+  Capacitor:
+    :path: "../node_modules/@capacitor/ios"
+  CapacitorCordova:
+    :path: "../node_modules/@capacitor/ios"
+
+SPEC CHECKSUMS:
+  Capacitor: 99a3d85b31f782d6b58bd9e3f2de4ed719c94d51
+  CapacitorCordova: 64114f68ed75e409d37a8e1129c0038b3a0cec0d
+  KAPinField: 24d85205115c1bb6aef8ff809944f41ac8c2785f
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+
+PODFILE CHECKSUM: 3277b6958e2ecc5711935c5e05005736870d4a28
+
+COCOAPODS: 1.9.3
