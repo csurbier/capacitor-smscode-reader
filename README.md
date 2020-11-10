@@ -1,6 +1,6 @@
 # Capacitor SmsCode reader
 
-Read incoming SMS code from iOS
+iOS (only) Capacitor plugin to read incoming SMS code
   
 ### Installation
 
