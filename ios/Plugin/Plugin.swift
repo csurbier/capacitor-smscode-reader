@@ -12,7 +12,8 @@ import SnapKit
 public class SmsCodeReader: CAPPlugin {
 
     @objc func present(_ call: CAPPluginCall) {
-        let pinView = PinViewController(returnCall: call)
+        let numberOfCharacters = call.getInt("numberOfCharacters") ?? 4
+        let pinView = PinViewController(numberOfCharacters:numberOfCharacters,returnCall: call)
        
         DispatchQueue.main.async {
                self.bridge.viewController.present(pinView, animated: true)
@@ -26,13 +27,15 @@ class PinViewController: UIViewController, KAPinFieldDelegate {
     lazy var centerStackView = UIStackView()
     lazy var pinCodeTextField = KAPinField()
     private var returnCall : CAPPluginCall
+    private var numberOfCharacters:Int
     override func viewDidLoad() {
         super.viewDidLoad()
         makeUI()
     }
 
-    required init(returnCall: CAPPluginCall) {
+    required init(numberOfCharacters: Int, returnCall: CAPPluginCall) {
         self.returnCall = returnCall
+        self.numberOfCharacters = numberOfCharacters
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -51,6 +54,7 @@ class PinViewController: UIViewController, KAPinFieldDelegate {
         self.view.addSubview(centerStackView)
         pinCodeTextField.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
         pinCodeTextField.properties.delegate = self
+        pinCodeTextField.properties.numberOfCharacters = numberOfCharacters // Default to 4
         pinCodeTextField.becomeFirstResponder()
          
         centerStackView.snp.makeConstraints { (make) in
