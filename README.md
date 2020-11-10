@@ -5,7 +5,7 @@ Read incoming SMS code from iOS
 ### Installation
 
 ```sh
-$ npm install capacitor-smsreader-code
+$ npm install capacitor-smscode-reader
 ```
 
 ### Use
