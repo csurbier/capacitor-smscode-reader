@@ -67,6 +67,9 @@ class PinViewController: UIViewController, KAPinFieldDelegate {
         pinCodeTextField.animateSuccess(with: "✔️") {
         }
         returnCall.success(["code":code])
+        self.dismiss(animated: true) {
+            
+        }
     }
 }
 
